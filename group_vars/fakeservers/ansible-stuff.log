@@ -1,0 +1,1435 @@
+Script started on Sat Mar 26 09:03:56 2016
+[?1034hbash-3.2$ exitnslookup www.facebook.com[C[C[C[C[C[C[C[C[C[C[9Psudo pkill excel[1PBlue[C[C[C[C[C[C[C[C[C[Cexit[Kless init.sh [K[K[K[K[K[K[K[K[K[K[K[K[Ka[Kansible -m [K[K[Kall -m ping
+[0;32mtesthost01.timmymon | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+[0;32mtesthost05.timmymon | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+[0;32mtesthost02.timmymon | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+[0;32mtesthost03.timmymon | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+[0;32mtesthost04.timmymon | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+[0;32mtesthost06.timmymon | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+[0;32mtesthost07.timmymon | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+[0;32mtesthost08.timmymon | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+[0;32mtesthost09.timmymon | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+[0;32mtesthost10.timmymon | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+[0;32mlocalhost | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}[0m
+bash-3.2$ cat /etc/ansible/ansi[K[Ks[K[K[Khosts 
+# A local connection to my macbook
+[macbook]
+localhost              ansible_connection=local
+
+# A set of 10 hosts that all resolve to 127.0.0.1
+[fakehosts]
+testhost[01:10].timmymon ansible_host=127.0.0.1 ansible_user=myork
+bash-3.2$ cat /et[K[K[K[K[K[K[Ktree /etc/ansible/
+bash: tree: command not found
+bash-3.2$ ansible all -a "brew install tree"
+[0;31mtesthost01.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost02.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost03.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost04.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost05.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost06.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost07.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost08.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost09.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost10.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;32mlocalhost | SUCCESS | rc=0 >>
+==> Downloading https://homebrew.bintray.com/bottles/tree-1.7.0.el_capitan.bottle.1.tar.gz
+==> Pouring tree-1.7.0.el_capitan.bottle.1.tar.gz
+🍺  /usr/local/Cellar/tree/1.7.0: 7 files, 112.4K
+[0m
+bash-3.2$ tree /etc/ansible/
+/etc/ansible/
+├── group_vars
+│   ├── fakeservers
+│   │   ├── ansible-stuff.log
+│   │   └── global.yml
+│   └── macbook
+│       └── global.yml
+└── hosts
+
+3 directories, 4 files
+bash-3.2$ tree /etc/ansible/
+/etc/ansible/
+├── group_vars
+│   ├── fakeservers
+│   │   ├── ansible-stuff.log
+│   │   └── global.yml
+│   └── macbook
+│       └── global.yml
+└── hosts
+
+3 directories, 4 files
+bash-3.2$ tree /etc/ansible/[C[C[C[C[C[C[C[C[C[C[Ktree /etc/ansible/[C[C[C[C[C[C[C[C[C[Cansible all -a "brew install tree"
+[0;31mtesthost01.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost04.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost02.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost03.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost05.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost06.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost08.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost07.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost09.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost10.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;32mlocalhost | SUCCESS | rc=0 >>
+Warning: tree-1.7.0 already installed
+[0m
+bash-3.2$ cd
+bash-3.2$ git clone https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg
+Cloning into 'ansible.cfg'...
+fatal: repository 'https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg/' not found
+bash-3.2$ git clone https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg[K[K[K[K[K[K[K[K[K[K[K
+Cloning into 'examples'...
+fatal: repository 'https://raw.githubusercontent.com/ansible/ansible/devel/examples/' not found
+bash-3.2$ wget https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg
+bash: wget: command not found
+bash-3.2$ curl -o ./.ansible/[K/
+cp/  tmp/ 
+bash-3.2$ curl -o ./.ansible/
+cp/  tmp/ 
+bash-3.2$ curl -o ./.ansible/
+cp/  tmp/ 
+bash-3.2$ curl -o ./.ansible/[K.cfg[C[1P/.ansible.cfg~/.ansible.cfg[C[C[C[C[C[C[C[C[C[C[C[C[C https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 13228  100 13228    0     0  34220      0 --:--:-- --:--:-- --:--:-- 34269
+bash-3.2$ ls
+Applications		Documents		Ebooks			Movies			Pictures		PycharmProjects		VirtualBox VMs		test
+Desktop			Downloads		Library			Music			Public			RubymineProjects	logs
+bash-3.2$ cat ~/.s[Kams[K[Knsible
+cat: /Users/myork/.ansible: Is a directory
+bash-3.2$ cat ~/.ansible.cfg 
+# config file for ansible -- http://ansible.com/
+# ==============================================
+
+# nearly all parameters can be overridden in ansible-playbook
+# or with command line flags. ansible will read ANSIBLE_CONFIG,
+# ansible.cfg in the current working directory, .ansible.cfg in
+# the home directory or /etc/ansible/ansible.cfg, whichever it
+# finds first
+
+[defaults]
+
+# some basic default values...
+
+#inventory      = /etc/ansible/hosts
+#library        = /usr/share/my_modules/
+#remote_tmp     = $HOME/.ansible/tmp
+#forks          = 5
+#poll_interval  = 15
+#sudo_user      = root
+#ask_sudo_pass = True
+#ask_pass      = True
+#transport      = smart
+#remote_port    = 22
+#module_lang    = C
+
+# plays will gather facts by default, which contain information about
+# the remote system.
+#
+# smart - gather by default, but don't regather if already gathered
+# implicit - gather by default, turn off with gather_facts: False
+# explicit - do not gather by default, must say gather_facts: True
+#gathering = implicit
+
+# by default retrieve all facts subsets
+# all - gather all subsets
+# network - gather min and network facts
+# hardware - gather hardware facts (longest facts to retrieve)
+# virtual - gather min and virtual facts
+# facter - import facts from facter
+# ohai - import facts from ohai
+# You can combine them using comma (ex: network,virtual)
+# You can negate them using ! (ex: !hardware,!facter,!ohai)
+# A minimal set of facts is always gathered.
+#gather_subset = all
+
+# additional paths to search for roles in, colon separated
+#roles_path    = /etc/ansible/roles
+
+# uncomment this to disable SSH key host checking
+#host_key_checking = False
+
+# change the default callback
+#stdout_callback = skippy
+# enable additional callbacks
+#callback_whitelist = timer, mail
+
+# Determine whether includes in tasks and handlers are "static" by
+# default. As of 2.0, includes are dynamic by default. Setting these
+# values to True will make includes behave more like they did in the
+# 1.x versions.
+#task_includes_static = True
+#handler_includes_static = True
+
+# change this for alternative sudo implementations
+#sudo_exe = sudo
+
+# What flags to pass to sudo
+# WARNING: leaving out the defaults might create unexpected behaviours
+#sudo_flags = -H -S -n
+
+# SSH timeout
+#timeout = 10
+
+# default user to use for playbooks if user is not specified
+# (/usr/bin/ansible will use current user as default)
+#remote_user = root
+
+# logging is off by default unless this path is defined
+# if so defined, consider logrotate
+#log_path = /var/log/ansible.log
+
+# default module name for /usr/bin/ansible
+#module_name = command
+
+# use this shell for commands executed under sudo
+# you may need to change this to bin/bash in rare instances
+# if sudo is constrained
+#executable = /bin/sh
+
+# if inventory variables overlap, does the higher precedence one win
+# or are hash values merged together?  The default is 'replace' but
+# this can also be set to 'merge'.
+#hash_behaviour = replace
+
+# by default, variables from roles will be visible in the global variable
+# scope. To prevent this, the following option can be enabled, and only
+# tasks and handlers within the role will see the variables there
+#private_role_vars = yes
+
+# list any Jinja2 extensions to enable here:
+#jinja2_extensions = jinja2.ext.do,jinja2.ext.i18n
+
+# if set, always use this private key file for authentication, same as
+# if passing --private-key to ansible or ansible-playbook
+#private_key_file = /path/to/file
+
+# If set, configures the path to the Vault password file as an alternative to
+# specifying --vault-password-file on the command line.
+#vault_password_file = /path/to/vault_password_file
+
+# format of string {{ ansible_managed }} available within Jinja2
+# templates indicates to users editing templates files will be replaced.
+# replacing {file}, {host} and {uid} and strftime codes with proper values.
+#ansible_managed = Ansible managed: {file} modified on %Y-%m-%d %H:%M:%S by {uid} on {host}
+# This short version is better used in templates as it won't flag the file as changed every run.
+#ansible_managed = Ansible managed: {file} on {host}
+
+# by default, ansible-playbook will display "Skipping [host]" if it determines a task
+# should not be run on a host.  Set this to "False" if you don't want to see these "Skipping"
+# messages. NOTE: the task header will still be shown regardless of whether or not the
+# task is skipped.
+#display_skipped_hosts = True
+
+# by default, if a task in a playbook does not include a name: field then
+# ansible-playbook will construct a header that includes the task's action but
+# not the task's args.  This is a security feature because ansible cannot know
+# if the *module* considers an argument to be no_log at the time that the
+# header is printed.  If your environment doesn't have a problem securing
+# stdout from ansible-playbook (or you have manually specified no_log in your
+# playbook on all of the tasks where you have secret information) then you can
+# safely set this to True to get more informative messages.
+#display_args_to_stdout = False
+
+# by default (as of 1.3), Ansible will raise errors when attempting to dereference
+# Jinja2 variables that are not set in templates or action lines. Uncomment this line
+# to revert the behavior to pre-1.3.
+#error_on_undefined_vars = False
+
+# by default (as of 1.6), Ansible may display warnings based on the configuration of the
+# system running ansible itself. This may include warnings about 3rd party packages or
+# other conditions that should be resolved if possible.
+# to disable these warnings, set the following value to False:
+#system_warnings = True
+
+# by default (as of 1.4), Ansible may display deprecation warnings for language
+# features that should no longer be used and will be removed in future versions.
+# to disable these warnings, set the following value to False:
+#deprecation_warnings = True
+
+# (as of 1.8), Ansible can optionally warn when usage of the shell and
+# command module appear to be simplified by using a default Ansible module
+# instead.  These warnings can be silenced by adjusting the following
+# setting or adding warn=yes or warn=no to the end of the command line
+# parameter string.  This will for example suggest using the git module
+# instead of shelling out to the git command.
+# command_warnings = False
+
+
+# set plugin path directories here, separate with colons
+#action_plugins     = /usr/share/ansible/plugins/action
+#callback_plugins   = /usr/share/ansible/plugins/callback
+#connection_plugins = /usr/share/ansible/plugins/connection
+#lookup_plugins     = /usr/share/ansible/plugins/lookup
+#vars_plugins       = /usr/share/ansible/plugins/vars
+#filter_plugins     = /usr/share/ansible/plugins/filter
+#test_plugins       = /usr/share/ansible/plugins/test
+#strategy_plugins   = /usr/share/ansible/plugins/strategy
+
+# by default callbacks are not loaded for /bin/ansible, enable this if you
+# want, for example, a notification or logging callback to also apply to
+# /bin/ansible runs
+#bin_ansible_callbacks = False
+
+
+# don't like cows?  that's unfortunate.
+# set to 1 if you don't want cowsay support or export ANSIBLE_NOCOWS=1
+#nocows = 1
+
+# set which cowsay stencil you'd like to use by default. When set to 'random',
+# a random stencil will be selected for each task. The selection will be filtered
+# against the `cow_whitelist` option below.
+#cow_selection = default
+#cow_selection = random
+
+# when using the 'random' option for cowsay, stencils will be restricted to this list.
+# it should be formatted as a comma-separated list with no spaces between names.
+# NOTE: line continuations here are for formatting purposes only, as the INI parser
+#       in python does not support them.
+#cow_whitelist=bud-frogs,bunny,cheese,daemon,default,dragon,elephant-in-snake,elephant,eyes,\
+#              hellokitty,kitty,luke-koala,meow,milk,moofasa,moose,ren,sheep,small,stegosaurus,\
+#              stimpy,supermilker,three-eyes,turkey,turtle,tux,udder,vader-koala,vader,www
+
+# don't like colors either?
+# set to 1 if you don't want colors, or export ANSIBLE_NOCOLOR=1
+#nocolor = 1
+
+# if set to a persistent type (not 'memory', for example 'redis') fact values
+# from previous runs in Ansible will be stored.  This may be useful when
+# wanting to use, for example, IP information from one group of servers
+# without having to talk to them in the same playbook run to get their
+# current IP information.
+#fact_caching = memory
+
+
+# retry files
+# When a playbook fails by default a .retry file will be created in ~/
+# You can disable this feature by setting retry_files_enabled to False
+# and you can change the location of the files by setting retry_files_save_path
+
+#retry_files_enabled = False
+#retry_files_save_path = ~/.ansible-retry
+
+# squash actions
+# Ansible can optimise actions that call modules with list parameters
+# when looping. Instead of calling the module once per with_ item, the
+# module is called once with all items at once. Currently this only works
+# under limited circumstances, and only with parameters named 'name'.
+#squash_actions = apk,apt,dnf,package,pacman,pkgng,yum,zypper
+
+# prevents logging of task data, off by default
+#no_log = False
+
+# prevents logging of tasks, but only on the targets, data is still logged on the master/controller
+#no_target_syslog = False
+
+# controls whether Ansible will raise an error or warning if a task has no
+# choice but to create world readable temporary files to execute a module on
+# the remote machine.  This option is False by default for security.  Users may
+# turn this on to have behaviour more like Ansible prior to 2.1.x.  See
+# https://docs.ansible.com/ansible/become.html#becoming-an-unprivileged-user
+# for more secure ways to fix this than enabling this option.
+#allow_world_readable_tmpfiles = False
+
+# controls the compression level of variables sent to
+# worker processes. At the default of 0, no compression
+# is used. This value must be an integer from 0 to 9.
+#var_compression_level = 9
+
+# This controls the cutoff point (in bytes) on --diff for files
+# set to 0 for unlimited (RAM may suffer!).
+#max_diff_size = 1048576
+
+[privilege_escalation]
+#become=True
+#become_method=sudo
+#become_user=root
+#become_ask_pass=False
+
+[paramiko_connection]
+
+# uncomment this line to cause the paramiko connection plugin to not record new host
+# keys encountered.  Increases performance on new host additions.  Setting works independently of the
+# host key checking setting above.
+#record_host_keys=False
+
+# by default, Ansible requests a pseudo-terminal for commands executed under sudo. Uncomment this
+# line to disable this behaviour.
+#pty=False
+
+[ssh_connection]
+
+# ssh arguments to use
+# Leaving off ControlPersist will result in poor performance, so use
+# paramiko on older platforms rather than removing it
+#ssh_args = -o ControlMaster=auto -o ControlPersist=60s
+
+# The path to use for the ControlPath sockets. This defaults to
+# "%(directory)s/ansible-ssh-%%h-%%p-%%r", however on some systems with
+# very long hostnames or very long path names (caused by long user names or
+# deeply nested home directories) this can exceed the character limit on
+# file socket names (108 characters for most platforms). In that case, you
+# may wish to shorten the string below.
+#
+# Example:
+# control_path = %(directory)s/%%h-%%r
+#control_path = %(directory)s/ansible-ssh-%%h-%%p-%%r
+
+# Enabling pipelining reduces the number of SSH operations required to
+# execute a module on the remote server. This can result in a significant
+# performance improvement when enabled, however when using "sudo:" you must
+# first disable 'requiretty' in /etc/sudoers
+#
+# By default, this option is disabled to preserve compatibility with
+# sudoers configurations that have requiretty (the default on many distros).
+#
+#pipelining = False
+
+# if True, make ansible use scp if the connection type is ssh
+# (default is sftp)
+#scp_if_ssh = True
+
+# if False, sftp will not use batch mode to transfer files. This may cause some
+# types of file transfer failures impossible to catch however, and should
+# only be disabled if your sftp version has problems with batch mode
+#sftp_batch_mode = False
+
+[accelerate]
+#accelerate_port = 5099
+#accelerate_timeout = 30
+#accelerate_connect_timeout = 5.0
+
+# The daemon timeout is measured in minutes. This time is measured
+# from the last activity to the accelerate daemon.
+#accelerate_daemon_timeout = 30
+
+# If set to yes, accelerate_multi_key will allow multiple
+# private keys to be uploaded to it, though each user must
+# have access to the system via SSH to add a new key. The default
+# is "no".
+#accelerate_multi_key = yes
+
+[selinux]
+# file systems that require special treatment when dealing with security context
+# the default behaviour that copies the existing context or uses the user default
+# needs to be changed to use the file system dependent context.
+#special_context_filesystems=nfs,vboxsf,fuse,ramfs
+
+# Set this to yes to allow libvirt_lxc connections to work without SELinux.
+#libvirt_lxc_noseclabel = yes
+
+[colors]
+#higlight = white
+#verbose = blue
+#warn = bright purple
+#error = red
+#debug = dark gray
+#deprecate = purple
+#skip = cyan
+#unreachable = red
+#ok = green
+#changed = yellow
+#diff_add = green
+#diff_remove = red
+#diff_lines = cyan
+bash-3.2$ [12@(reverse-i-search)`':[C[20@a': cat ~/.ansible.cfg[1@n[C[C[C[C[C[C[C[C[C[C[1@s[C[C[C[C[C[C[C[C[C[C[1@i[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kurl -o ~/.ansible.cfg https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[18Pwget[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Pgit clone https://raw.githubusercontent.com/ansible/ansible/devel/examples/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cansible.cfg[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[52Pansible all -a "brew install tree"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[16Pbash-3.2$[C
+[0;31mtesthost04.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost01.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost02.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost03.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost05.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost06.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost07.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost09.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost08.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost10.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;32mlocalhost | SUCCESS | rc=0 >>
+Warning: tree-1.7.0 already installed
+[0m
+bash-3.2$ ansible all -a "brew install tree" -vvvv
+Using /Users/myork/.ansible.cfg as config file
+[0;34mLoaded callback minimal of type stdout, v2.0[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.03-77892188890922 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.03-77892188890922 `" )'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.03-146971835456575 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.03-146971835456575 `" )'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.04-166870542745877 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.04-166870542745877 `" )'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.04-134829543010618 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.04-134829543010618 `" )'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.04-179860447733331 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.04-179860447733331 `" )'"'"''[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpQ0fYjx TO /Users/myork/.ansible/tmp/ansible-tmp-1458983826.03-77892188890922/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpNLaJxz TO /Users/myork/.ansible/tmp/ansible-tmp-1458983826.03-146971835456575/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpOsZjeI TO /Users/myork/.ansible/tmp/ansible-tmp-1458983826.04-166870542745877/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpuOkjA4 TO /Users/myork/.ansible/tmp/ansible-tmp-1458983826.04-134829543010618/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpyBVmTM TO /Users/myork/.ansible/tmp/ansible-tmp-1458983826.04-179860447733331/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983826.03-77892188890922/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983826.03-77892188890922/" > /dev/null 2>&1'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983826.03-146971835456575/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983826.03-146971835456575/" > /dev/null 2>&1'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983826.04-166870542745877/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983826.04-166870542745877/" > /dev/null 2>&1'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983826.04-134829543010618/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983826.04-134829543010618/" > /dev/null 2>&1'"'"''[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983826.04-179860447733331/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983826.04-179860447733331/" > /dev/null 2>&1'"'"''[0m
+[0;31mtesthost02.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost01.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost03.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost05.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.24-274957917361798 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.24-274957917361798 `" )'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.24-109681451718548 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.24-109681451718548 `" )'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.25-262749947717403 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.25-262749947717403 `" )'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.26-43781604852126 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.26-43781604852126 `" )'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.26-50361397841562 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.26-50361397841562 `" )'"'"''[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpfkeVtk TO /Users/myork/.ansible/tmp/ansible-tmp-1458983826.24-274957917361798/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpsLb8br TO /Users/myork/.ansible/tmp/ansible-tmp-1458983826.24-109681451718548/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpqPaTlL TO /Users/myork/.ansible/tmp/ansible-tmp-1458983826.25-262749947717403/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpGib66x TO /Users/myork/.ansible/tmp/ansible-tmp-1458983826.26-43781604852126/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpPzRTov TO /Users/myork/.ansible/tmp/ansible-tmp-1458983826.26-50361397841562/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983826.24-274957917361798/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983826.24-274957917361798/" > /dev/null 2>&1'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983826.24-109681451718548/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983826.24-109681451718548/" > /dev/null 2>&1'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983826.25-262749947717403/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983826.25-262749947717403/" > /dev/null 2>&1'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983826.26-43781604852126/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983826.26-43781604852126/" > /dev/null 2>&1'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983826.26-50361397841562/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983826.26-50361397841562/" > /dev/null 2>&1'"'"''[0m
+[0;31mtesthost04.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost06.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost07.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost08.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;34mESTABLISH LOCAL CONNECTION FOR USER: myork[0m
+[0;34m127.0.0.2 EXEC /bin/sh -c 'mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.43-260759608308591 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983826.43-260759608308591 `"'[0m
+[0;31mtesthost09.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;31mtesthost10.timmymon | FAILED | rc=2 >>
+[Errno 2] No such file or directory
+[0m
+[0;34m127.0.0.2 PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpEfCbX9 TO /Users/myork/.ansible/tmp/ansible-tmp-1458983826.43-260759608308591/command[0m
+[0;34m127.0.0.2 EXEC /bin/sh -c 'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983826.43-260759608308591/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983826.43-260759608308591/" > /dev/null 2>&1'[0m
+[0;32mlocalhost | SUCCESS | rc=0 >>
+Warning: tree-1.7.0 already installed
+[0m
+bash-3.2$ which brew
+/usr/local/bin/brew
+bash-3.2$ which brewansible all -a "brew install tree" -vvvv[1P[1P[1P[1P[1@/[1@u[1@s[1@r[1@/[1@l[1@o[1@c[1@a[1@l[1@/[1@b[1@i[1@n[1@/[1@b[1@r[1@e[1@w
+Using /Users/myork/.ansible.cfg as config file
+[0;34mLoaded callback minimal of type stdout, v2.0[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983923.62-16868542456299 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983923.62-16868542456299 `" )'"'"''[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983923.62-251725734128774 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983923.62-251725734128774 `" )'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983923.63-185788393236540 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983923.63-185788393236540 `" )'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983923.63-132996386460214 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983923.63-132996386460214 `" )'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983923.63-28350035851970 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983923.63-28350035851970 `" )'"'"''[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpDb5OLL TO /Users/myork/.ansible/tmp/ansible-tmp-1458983923.62-16868542456299/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpTXMEQ_ TO /Users/myork/.ansible/tmp/ansible-tmp-1458983923.62-251725734128774/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpler3Sf TO /Users/myork/.ansible/tmp/ansible-tmp-1458983923.63-185788393236540/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpEDTsUO TO /Users/myork/.ansible/tmp/ansible-tmp-1458983923.63-132996386460214/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpzLBEAf TO /Users/myork/.ansible/tmp/ansible-tmp-1458983923.63-28350035851970/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983923.62-16868542456299/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983923.62-16868542456299/" > /dev/null 2>&1'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983923.63-185788393236540/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983923.63-185788393236540/" > /dev/null 2>&1'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983923.63-132996386460214/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983923.63-132996386460214/" > /dev/null 2>&1'"'"''[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983923.62-251725734128774/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983923.62-251725734128774/" > /dev/null 2>&1'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983923.63-28350035851970/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983923.63-28350035851970/" > /dev/null 2>&1'"'"''[0m
+[0;32mtesthost01.timmymon | SUCCESS | rc=0 >>
+Warning: tree-1.7.0 already installed
+[0m
+[0;32mtesthost03.timmymon | SUCCESS | rc=0 >>
+Warning: tree-1.7.0 already installed
+[0m
+[0;32mtesthost04.timmymon | SUCCESS | rc=0 >>
+Warning: tree-1.7.0 already installed
+[0m
+[0;32mtesthost02.timmymon | SUCCESS | rc=0 >>
+Warning: tree-1.7.0 already installed
+[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983924.22-235703845308976 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983924.22-235703845308976 `" )'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983924.22-146597017553245 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983924.22-146597017553245 `" )'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983924.22-286108942724 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983924.22-286108942724 `" )'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983924.23-138045772458301 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983924.23-138045772458301 `" )'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'( umask 22 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983924.23-280442013778295 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983924.23-280442013778295 `" )'"'"''[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpuvxujb TO /Users/myork/.ansible/tmp/ansible-tmp-1458983924.22-235703845308976/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmp2ewod0 TO /Users/myork/.ansible/tmp/ansible-tmp-1458983924.22-146597017553245/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpOEKX9V TO /Users/myork/.ansible/tmp/ansible-tmp-1458983924.22-286108942724/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpJrXY4r TO /Users/myork/.ansible/tmp/ansible-tmp-1458983924.23-138045772458301/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpfniWNG TO /Users/myork/.ansible/tmp/ansible-tmp-1458983924.23-280442013778295/command[0m
+[0;34m<127.0.0.1> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r '[127.0.0.1]'[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983924.22-235703845308976/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983924.22-235703845308976/" > /dev/null 2>&1'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983924.22-146597017553245/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983924.22-146597017553245/" > /dev/null 2>&1'"'"''[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983924.22-286108942724/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983924.22-286108942724/" > /dev/null 2>&1'"'"''[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> ESTABLISH SSH CONNECTION FOR USER: None[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983924.23-138045772458301/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983924.23-138045772458301/" > /dev/null 2>&1'"'"''[0m
+[0;34m<127.0.0.1> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/Users/myork/.ansible/cp/ansible-ssh-%h-%p-%r -tt 127.0.0.1 '/bin/sh -c '"'"'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983924.23-280442013778295/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983924.23-280442013778295/" > /dev/null 2>&1'"'"''[0m
+[0;32mtesthost05.timmymon | SUCCESS | rc=0 >>
+Warning: tree-1.7.0 already installed
+[0m
+[0;32mtesthost06.timmymon | SUCCESS | rc=0 >>
+Warning: tree-1.7.0 already installed
+[0m
+[0;34mESTABLISH LOCAL CONNECTION FOR USER: myork[0m
+[0;34m127.0.0.2 EXEC /bin/sh -c 'mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1458983924.72-94327704845676 `" && echo "` echo $HOME/.ansible/tmp/ansible-tmp-1458983924.72-94327704845676 `"'[0m
+[0;34m127.0.0.2 PUT /var/folders/rd/v4c_swzd2mxfzjr5m89tvc4r0000gn/T/tmpT9vMSe TO /Users/myork/.ansible/tmp/ansible-tmp-1458983924.72-94327704845676/command[0m
+[0;34m127.0.0.2 EXEC /bin/sh -c 'LANG=en_GB.UTF-8 LC_ALL=en_GB.UTF-8 LC_MESSAGES=en_GB.UTF-8 /usr/bin/python /Users/myork/.ansible/tmp/ansible-tmp-1458983924.72-94327704845676/command; rm -rf "/Users/myork/.ansible/tmp/ansible-tmp-1458983924.72-94327704845676/" > /dev/null 2>&1'[0m
+[0;32mtesthost07.timmymon | SUCCESS | rc=0 >>
+Warning: tree-1.7.0 already installed
+[0m
+[0;32mtesthost09.timmymon | SUCCESS | rc=0 >>
+Warning: tree-1.7.0 already installed
+[0m
+[0;32mtesthost08.timmymon | SUCCESS | rc=0 >>
+Warning: tree-1.7.0 already installed
+[0m
+[0;32mtesthost10.timmymon | SUCCESS | rc=0 >>
+Warning: tree-1.7.0 already installed
+[0m
+[0;32mlocalhost | SUCCESS | rc=0 >>
+Warning: tree-1.7.0 already installed
+[0m
+bash-3.2$ brew status vim
+
+[4;31mError[0m: Unknown command: status
+bash-3.2$ 
+bash-3.2$ brew search vim
+macvim                            pacvim                            pyvim                             vim                               vimpager                          vimpc                           
+Caskroom/cask/macvim                               Caskroom/cask/vimediamanager                       Caskroom/cask/vimr                                 Caskroom/versions/macvim-kaoriya                 
+bash-3.2$ which vim
+/usr/bin/vim
+bash-3.2$ ls
+Applications		Documents		Ebooks			Movies			Pictures		PycharmProjects		VirtualBox VMs		test
+Desktop			Downloads		Library			Music			Public			RubymineProjects	logs
+bash-3.2$ touch [K[K[K[K[K[Kecho "timmy" > mtimmy.txt
+bash-3.2$ ansible -[Kall -m copy "src=./mti[K[K[K[K[K
+bash-3.2$ pwd
+/Users/myork
+bash-3.2$ ansible all -m copy "src=/Users/myoo[Krk dest=/Users/myotk[K[Krk[K[K[K[K[K[K[K[K[K[K[Kr[Ktp[Kmp"/"t"e"s"t"2"
+Usage: ansible <host-pattern> [options]
+
+Options:
+  -a MODULE_ARGS, --args=MODULE_ARGS
+                        module arguments
+  --ask-become-pass     ask for privilege escalation password
+  -k, --ask-pass        ask for connection password
+  --ask-su-pass         ask for su password (deprecated, use become)
+  -K, --ask-sudo-pass   ask for sudo password (deprecated, use become)
+  --ask-vault-pass      ask for vault password
+  -B SECONDS, --background=SECONDS
+                        run asynchronously, failing after X seconds
+                        (default=N/A)
+  -b, --become          run operations with become (nopasswd implied)
+  --become-method=BECOME_METHOD
+                        privilege escalation method to use (default=sudo),
+                        valid choices: [ sudo | su | pbrun | pfexec | runas |
+                        doas ]
+  --become-user=BECOME_USER
+                        run operations as this user (default=root)
+  -C, --check           don't make any changes; instead, try to predict some
+                        of the changes that may occur
+  -c CONNECTION, --connection=CONNECTION
+                        connection type to use (default=smart)
+  -D, --diff            when changing (small) files and templates, show the
+                        differences in those files; works great with --check
+  -e EXTRA_VARS, --extra-vars=EXTRA_VARS
+                        set additional variables as key=value or YAML/JSON
+  -f FORKS, --forks=FORKS
+                        specify number of parallel processes to use
+                        (default=5)
+  -h, --help            show this help message and exit
+  -i INVENTORY, --inventory-file=INVENTORY
+                        specify inventory host path
+                        (default=/etc/ansible/hosts) or comma separated host
+                        list.
+  -l SUBSET, --limit=SUBSET
+                        further limit selected hosts to an additional pattern
+  --list-hosts          outputs a list of matching hosts; does not execute
+                        anything else
+  -m MODULE_NAME, --module-name=MODULE_NAME
+                        module name to execute (default=command)
+  -M MODULE_PATH, --module-path=MODULE_PATH
+                        specify path(s) to module library (default=None)
+  --new-vault-password-file=NEW_VAULT_PASSWORD_FILE
+                        new vault password file for rekey
+  -o, --one-line        condense output
+  --output=OUTPUT_FILE  output file name for encrypt or decrypt; use - for
+                        stdout
+  -P POLL_INTERVAL, --poll=POLL_INTERVAL
+                        set the poll interval if using -B (default=15)
+  --private-key=PRIVATE_KEY_FILE, --key-file=PRIVATE_KEY_FILE
+                        use this file to authenticate the connection
+  --scp-extra-args=SCP_EXTRA_ARGS
+                        specify extra arguments to pass to scp only (e.g. -l)
+  --sftp-extra-args=SFTP_EXTRA_ARGS
+                        specify extra arguments to pass to sftp only (e.g. -f,
+                        -l)
+  --ssh-common-args=SSH_COMMON_ARGS
+                        specify common arguments to pass to sftp/scp/ssh (e.g.
+                        ProxyCommand)
+  --ssh-extra-args=SSH_EXTRA_ARGS
+                        specify extra arguments to pass to ssh only (e.g. -R)
+  -S, --su              run operations with su (deprecated, use become)
+  -R SU_USER, --su-user=SU_USER
+                        run operations with su as this user (default=root)
+                        (deprecated, use become)
+  -s, --sudo            run operations with sudo (nopasswd) (deprecated, use
+                        become)
+  -U SUDO_USER, --sudo-user=SUDO_USER
+                        desired sudo user (default=root) (deprecated, use
+                        become)
+  --syntax-check        perform a syntax check on the playbook, but do not
+                        execute it
+  -T TIMEOUT, --timeout=TIMEOUT
+                        override the connection timeout in seconds
+                        (default=10)
+  -t TREE, --tree=TREE  log output to this directory
+  -u REMOTE_USER, --user=REMOTE_USER
+                        connect as this user (default=None)
+  --vault-password-file=VAULT_PASSWORD_FILE
+                        vault password file
+  -v, --verbose         verbose mode (-vvv for more, -vvvv to enable
+                        connection debugging)
+  --version             show program's version number and exit
+[0;31mERROR! Missing target hosts[0m
+bash-3.2$ ansible all -m copy "src=/Users/myork dest=/tmp/test2"[1@-[1@a[1@ 
+^CProcess WorkerProcess-5:
+Process WorkerProcess-6:
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python/2.7.11/Frameworks/Python.framework/Versions/2.7/lib/python2.7/multiprocessing/process.py", line 258, in _bootstrap
+  File "/usr/local/Cellar/python/2.7.11/Frameworks/Python.framework/Versions/2.7/lib/python2.7/multiprocessing/process.py", line 258, in _bootstrap
+Process WorkerProcess-4:
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python/2.7.11/Frameworks/Python.framework/Versions/2.7/lib/python2.7/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python2.7/site-packages/ansible/executor/process/worker.py", line 115, in run
+    self.run()
+    self.run()
+  File "/usr/local/lib/python2.7/site-packages/ansible/executor/process/worker.py", line 115, in run
+  File "/usr/local/lib/python2.7/site-packages/ansible/executor/process/worker.py", line 115, in run
+    self._shared_loader_obj,
+  File "/usr/local/lib/python2.7/site-packages/ansible/executor/task_executor.py", line 120, in run
+    self._shared_loader_obj,
+  File "/usr/local/lib/python2.7/site-packages/ansible/executor/task_executor.py", line 120, in run
+    self._shared_loader_obj,
+  File "/usr/local/lib/python2.7/site-packages/ansible/executor/task_executor.py", line 120, in run
+Process WorkerProcess-3:
+    res = self._execute()
+  File "/usr/local/lib/python2.7/site-packages/ansible/executor/task_executor.py", line 418, in _execute
+    result = self._handler.run(task_vars=variables)
+  File "/usr/local/lib/python2.7/site-packages/ansible/plugins/action/copy.py", line 241, in run
+[0;31m [ERROR]: User interrupted execution
+[0m
+bash-3.2$ ansible all -m copy -a "src=/Users/myork dest=/tmp/test2"[1P[1P[1P[1@m[1@a[1@c[1@b[1@o[1@o[1@k
+[0;31mlocalhost | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+bash-3.2$ ansible macbook -m copy -a "src=/Users/myork dest=/tmp/test2"[C[C[C[1P[1P[1P[1P[1P[1P[1P[1@f[1@a[1@k[1@e[1@h[1@o[1@s[1@t[1@s
+[0;31mtesthost05.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost02.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost04.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost03.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost01.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost06.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost07.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost08.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost09.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost10.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+bash-3.2$ ansible fakehosts -m copy -a "src=/Users/myork dest=/tmp/test2"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pmacbook[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2@fakehosts[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"/"U"s"e"r"s"/"m"y"o"r"k"-"c"o"p"i"e"d"[C"
+> 
+bash-3.2$ ansible fakehosts -m copy -a "src=/Users/myork dest=/Users/myork-copied""[C[K
+[0;31mtesthost05.timmymon | FAILED! => {
+    "changed": false, 
+    "checksum": "e1fe010ce608d3b2c3c63573f48b5ea68ab773b2", 
+    "failed": true, 
+    "module_stderr": "", 
+    "module_stdout": "Traceback (most recent call last):\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984321.86-256608640616386/copy\", line 2307, in <module>\r\n    main()\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984321.86-256608640616386/copy\", line 266, in main\r\n    os.makedirs(dirname)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 150, in makedirs\r\n    makedirs(head, mode)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 157, in makedirs\r\n    mkdir(name, mode)\r\nOSError: [Errno 13] Permission denied: '/Users/myork-copied'\r\n", 
+    "msg": "MODULE FAILURE", 
+    "parsed": false
+}[0m
+[0;31mtesthost04.timmymon | FAILED! => {
+    "changed": false, 
+    "checksum": "e1fe010ce608d3b2c3c63573f48b5ea68ab773b2", 
+    "failed": true, 
+    "module_stderr": "", 
+    "module_stdout": "Traceback (most recent call last):\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984321.89-68898641762746/copy\", line 2307, in <module>\r\n    main()\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984321.89-68898641762746/copy\", line 266, in main\r\n    os.makedirs(dirname)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 150, in makedirs\r\n    makedirs(head, mode)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 157, in makedirs\r\n    mkdir(name, mode)\r\nOSError: [Errno 13] Permission denied: '/Users/myork-copied'\r\n", 
+    "msg": "MODULE FAILURE", 
+    "parsed": false
+}[0m
+[0;31mtesthost02.timmymon | FAILED! => {
+    "changed": false, 
+    "checksum": "e1fe010ce608d3b2c3c63573f48b5ea68ab773b2", 
+    "failed": true, 
+    "module_stderr": "", 
+    "module_stdout": "Traceback (most recent call last):\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984321.89-77793334294792/copy\", line 2307, in <module>\r\n    main()\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984321.89-77793334294792/copy\", line 266, in main\r\n    os.makedirs(dirname)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 150, in makedirs\r\n    makedirs(head, mode)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 157, in makedirs\r\n    mkdir(name, mode)\r\nOSError: [Errno 13] Permission denied: '/Users/myork-copied'\r\n", 
+    "msg": "MODULE FAILURE", 
+    "parsed": false
+}[0m
+[0;31mtesthost01.timmymon | FAILED! => {
+    "changed": false, 
+    "checksum": "e1fe010ce608d3b2c3c63573f48b5ea68ab773b2", 
+    "failed": true, 
+    "module_stderr": "", 
+    "module_stdout": "Traceback (most recent call last):\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984321.9-23209048068887/copy\", line 2307, in <module>\r\n    main()\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984321.9-23209048068887/copy\", line 266, in main\r\n    os.makedirs(dirname)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 150, in makedirs\r\n    makedirs(head, mode)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 157, in makedirs\r\n    mkdir(name, mode)\r\nOSError: [Errno 13] Permission denied: '/Users/myork-copied'\r\n", 
+    "msg": "MODULE FAILURE", 
+    "parsed": false
+}[0m
+[0;31mtesthost03.timmymon | FAILED! => {
+    "changed": false, 
+    "checksum": "e1fe010ce608d3b2c3c63573f48b5ea68ab773b2", 
+    "failed": true, 
+    "module_stderr": "", 
+    "module_stdout": "Traceback (most recent call last):\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984321.98-32665625618123/copy\", line 2307, in <module>\r\n    main()\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984321.98-32665625618123/copy\", line 266, in main\r\n    os.makedirs(dirname)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 150, in makedirs\r\n    makedirs(head, mode)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 157, in makedirs\r\n    mkdir(name, mode)\r\nOSError: [Errno 13] Permission denied: '/Users/myork-copied'\r\n", 
+    "msg": "MODULE FAILURE", 
+    "parsed": false
+}[0m
+[0;31mtesthost06.timmymon | FAILED! => {
+    "changed": false, 
+    "checksum": "e1fe010ce608d3b2c3c63573f48b5ea68ab773b2", 
+    "failed": true, 
+    "module_stderr": "", 
+    "module_stdout": "Traceback (most recent call last):\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984322.98-166986470274354/copy\", line 2307, in <module>\r\n    main()\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984322.98-166986470274354/copy\", line 266, in main\r\n    os.makedirs(dirname)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 150, in makedirs\r\n    makedirs(head, mode)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 157, in makedirs\r\n    mkdir(name, mode)\r\nOSError: [Errno 13] Permission denied: '/Users/myork-copied'\r\n", 
+    "msg": "MODULE FAILURE", 
+    "parsed": false
+}[0m
+[0;31mtesthost07.timmymon | FAILED! => {
+    "changed": false, 
+    "checksum": "e1fe010ce608d3b2c3c63573f48b5ea68ab773b2", 
+    "failed": true, 
+    "module_stderr": "", 
+    "module_stdout": "Traceback (most recent call last):\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984323.05-127975870238823/copy\", line 2307, in <module>\r\n    main()\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984323.05-127975870238823/copy\", line 266, in main\r\n    os.makedirs(dirname)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 150, in makedirs\r\n    makedirs(head, mode)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 157, in makedirs\r\n    mkdir(name, mode)\r\nOSError: [Errno 13] Permission denied: '/Users/myork-copied'\r\n", 
+    "msg": "MODULE FAILURE", 
+    "parsed": false
+}[0m
+[0;31mtesthost09.timmymon | FAILED! => {
+    "changed": false, 
+    "checksum": "e1fe010ce608d3b2c3c63573f48b5ea68ab773b2", 
+    "failed": true, 
+    "module_stderr": "", 
+    "module_stdout": "Traceback (most recent call last):\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984323.08-151967827511151/copy\", line 2307, in <module>\r\n    main()\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984323.08-151967827511151/copy\", line 266, in main\r\n    os.makedirs(dirname)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 150, in makedirs\r\n    makedirs(head, mode)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 157, in makedirs\r\n    mkdir(name, mode)\r\nOSError: [Errno 13] Permission denied: '/Users/myork-copied'\r\n", 
+    "msg": "MODULE FAILURE", 
+    "parsed": false
+}[0m
+[0;31mtesthost08.timmymon | FAILED! => {
+    "changed": false, 
+    "checksum": "e1fe010ce608d3b2c3c63573f48b5ea68ab773b2", 
+    "failed": true, 
+    "module_stderr": "", 
+    "module_stdout": "Traceback (most recent call last):\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984323.13-81877582878698/copy\", line 2307, in <module>\r\n    main()\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984323.13-81877582878698/copy\", line 266, in main\r\n    os.makedirs(dirname)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 150, in makedirs\r\n    makedirs(head, mode)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 157, in makedirs\r\n    mkdir(name, mode)\r\nOSError: [Errno 13] Permission denied: '/Users/myork-copied'\r\n", 
+    "msg": "MODULE FAILURE", 
+    "parsed": false
+}[0m
+[0;31mtesthost10.timmymon | FAILED! => {
+    "changed": false, 
+    "checksum": "e1fe010ce608d3b2c3c63573f48b5ea68ab773b2", 
+    "failed": true, 
+    "module_stderr": "", 
+    "module_stdout": "Traceback (most recent call last):\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984323.17-206218235121390/copy\", line 2307, in <module>\r\n    main()\r\n  File \"/Users/myork/.ansible/tmp/ansible-tmp-1458984323.17-206218235121390/copy\", line 266, in main\r\n    os.makedirs(dirname)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 150, in makedirs\r\n    makedirs(head, mode)\r\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py\", line 157, in makedirs\r\n    mkdir(name, mode)\r\nOSError: [Errno 13] Permission denied: '/Users/myork-copied'\r\n", 
+    "msg": "MODULE FAILURE", 
+    "parsed": false
+}[0m
+bash-3.2$ ansible fakehosts -m copy -a "src=/Users/myork dest=/Users/myork-copied"[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pcopied"/copied"
+[0;31mtesthost05.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost02.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost03.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost01.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost04.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost09.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost08.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost06.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost07.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost10.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+bash-3.2$ vi .ansible
+[?1049h[?1h=[1;24r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[24;1H".ansible" is a directory[>c[1;1H" ============================================================================
+" Netrw Directory Listing[39C (netrw v140)
+"   /Users/myork/.ansible
+"   Sorted by      name
+"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
+"   Quick Help: <F1>:help  -:go up dir  D:delete  R:rename  s:sort-by  x:exec
+" ============================================================================
+[4m../                                                                                                                                                                                                         [m[9;1Hcp/
+tmp/
+.swp
+[94m~                                                                                                                                                                                                           [13;1H~                                                                                                                                                                                                           [14;1H~                                                                                                                                                                                                           [15;1H~                                                                                                                                                                                                           [16;1H~                                                                                                                                                                                                           [17;1H~                                                                                                                                                                                                           [18;1H~                                                                                                                                                                                                           [19;1H~                                                                                                                                                                                                           [20;1H~                                                                                                                                                                                                           [21;1H~                                                                                                                                                                                                           [22;1H~                                                                                                                                                                                                           [23;1H~                                                                                                                                                                                                           [8;1H[?12l[?25h[?25l[m[24;1H[K[24;1H:[?12l[?25hq![?25l[24;1H[K[24;1H[?1l>[?12l[?25h[?1049lbash-3.2$ vi .ansible.cfg 
+[?1049h[?1h=[1;24r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[24;1H".ansible.cfg" 334L, 13228C[>c[1;1H# config file for ansible -- http://ansible.com/
+# ==============================================
+
+# nearly all parameters can be overridden in ansible-playbook
+# or with command line flags. ansible will read ANSIBLE_CONFIG,
+# ansible.cfg in the current working directory, .ansible.cfg in
+# the home directory or /etc/ansible/ansible.cfg, whichever it
+# finds first
+
+[defaults]
+
+# some basic default values...
+
+#inventory      = /etc/ansible/hosts
+#library[7C = /usr/share/my_modules/
+#remote_tmp     = $HOME/.ansible/tmp
+#forks[9C = 5
+#poll_interval  = 15
+#sudo_user      = root
+#ask_sudo_pass = True
+#ask_pass      = True
+#transport      = smart
+#remote_port    = 22[1;1H[?12l[?25h[?25l[24;1H[K[24;1H/[?12l[?25hontrol[?25l[27m[m[H[2J[2;1H# squash actions
+# Ansible can optimise actions that call modules with list parameters
+# when looping. Instead of calling the module once per with_ item, the
+# module is called once with all items at once. Currently this only works
+# under limited circumstances, and only with parameters named 'name'.
+#squash_actions = apk,apt,dnf,package,pacman,pkgng,yum,zypper
+
+# prevents logging of task data, off by default
+#no_log = False
+
+# prevents logging of tasks, but only on the targets, data is still logged on the master/controller
+#no_target_syslog = False
+
+# controls whether Ansible will raise an error or warning if a task has no
+# choice but to create world readable temporary files to execute a module on
+# the remote machine.  This option is False by default for security.  Users may
+# turn this on to have behaviour more like Ansible prior to 2.1.x.  See
+# https://docs.ansible.com/ansible/become.html#becoming-an-unprivileged-user
+# for more secure ways to fix this than enabling this option.
+#allow_world_readable_tmpfiles = False
+
+# controls the compression level of variables sent to[12;91H[?12l[?25h[11;1H[12;91H[?25l[24;1H/ontrol[15;4H[?12l[?25h[?25l[24;1H[23;4H[?12l[?25h[?25l
+[1;23r[1;1H[5M[1;24r[19;1H# worker processes. At the default of 0, no compression
+# is used. This value must be an integer from 0 to 9.
+#var_compression_level = 9
+
+# This controls the cutoff point (in bytes) on --diff for files[24;1H[K[23;9H[?12l[?25h[?25l
+/ontrol[27m[m[H[2J[1;1H# keys encountered.  Increases performance on new host additions.  Setting works independently of the
+# host key checking setting above.
+#record_host_keys=False
+
+# by default, Ansible requests a pseudo-terminal for commands executed under sudo. Uncomment this
+# line to disable this behaviour.
+#pty=False
+
+[ssh_connection]
+
+# ssh arguments to use
+# Leaving off ControlPersist will result in poor performance, so use
+# paramiko on older platforms rather than removing it
+#ssh_args = -o ControlMaster=auto -o ControlPersist=60s
+
+# The path to use for the ControlPath sockets. This defaults to
+# "%(directory)s/ansible-ssh-%%h-%%p-%%r", however on some systems with
+# very long hostnames or very long path names (caused by long user names or
+# deeply nested home directories) this can exceed the character limit on
+# file socket names (108 characters for most platforms). In that case, you
+# may wish to shorten the string below.
+#
+# Example:[12;16H[?12l[?25h[?25l[24;1H/ontrol[14;17H[?12l[?25h
+[16;17H[17;17H[18;17H[19;17H[20;17H[21;17H
+[23;10H[?25l[1;23r[23;1H
+[1;24r[23;1H# control_path = %(directory)s/%%h-%%r[24;1H[K[23;17H[?12l[?25h[?25l[1;23r[23;1H
+[1;24r[23;1H#control_path = %(directory)s/ansible-ssh-%%h-%%p-%%r[23;17H[?12l[?25h[?25l[1;23r[23;1H
+[1;24r[23;1H[?12l[?25h[?25l[1;23r[23;1H
+[1;24r[23;1H# Enabling pipelining reduces the number of SSH operations required to[23;17H[?12l[?25h[?25l[1;23r[23;1H
+[1;24r[23;1H# execute a module on the remote server. This can result in a significant[23;17H[?12l[?25h[?25l[1;23r[23;1H
+[1;24r[23;1H# performance improvement when enabled, however when using "sudo:" you must[23;17H[?12l[?25h[?25l[1;23r[23;1H
+[1;24r[23;1H# first disable 'requiretty' in /etc/sudoers[23;17H[?12l[?25h[22;17H[21;17H[20;17H[19;1H[18;17H[17;17H[18;17H[17;1H
+
+[18;1H[17;1H
+
+
+
+[?25l
+
+
+:[?12l[?25hq![?25l[24;1H[K[24;1H[?1l>[?12l[?25h[?1049lbash-3.2$ vi .ansible.cfg [Kansible fakehosts -m copy -a "src=/Users/myork dest=/Users/myork/copied"[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kbrew
+[0;31mtesthost01.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "The module brew was not found in configured module paths. Additionally, core modules are missing. If this is a checkout, run 'git submodule update --init --recursive' to correct this problem."
+}[0m
+[0;31mtesthost02.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "The module brew was not found in configured module paths. Additionally, core modules are missing. If this is a checkout, run 'git submodule update --init --recursive' to correct this problem."
+}[0m
+[0;31mtesthost03.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "The module brew was not found in configured module paths. Additionally, core modules are missing. If this is a checkout, run 'git submodule update --init --recursive' to correct this problem."
+}[0m
+[0;31mtesthost04.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "The module brew was not found in configured module paths. Additionally, core modules are missing. If this is a checkout, run 'git submodule update --init --recursive' to correct this problem."
+}[0m
+[0;31mtesthost05.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "The module brew was not found in configured module paths. Additionally, core modules are missing. If this is a checkout, run 'git submodule update --init --recursive' to correct this problem."
+}[0m
+[0;31mtesthost06.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "The module brew was not found in configured module paths. Additionally, core modules are missing. If this is a checkout, run 'git submodule update --init --recursive' to correct this problem."
+}[0m
+[0;31mtesthost07.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "The module brew was not found in configured module paths. Additionally, core modules are missing. If this is a checkout, run 'git submodule update --init --recursive' to correct this problem."
+}[0m
+[0;31mtesthost08.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "The module brew was not found in configured module paths. Additionally, core modules are missing. If this is a checkout, run 'git submodule update --init --recursive' to correct this problem."
+}[0m
+[0;31mtesthost09.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "The module brew was not found in configured module paths. Additionally, core modules are missing. If this is a checkout, run 'git submodule update --init --recursive' to correct this problem."
+}[0m
+[0;31mtesthost10.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "The module brew was not found in configured module paths. Additionally, core modules are missing. If this is a checkout, run 'git submodule update --init --recursive' to correct this problem."
+}[0m
+bash-3.2$ git submodule update --init --recursive
+fatal: Not a git repository (or any of the parent directories): .git
+bash-3.2$ ls
+Applications		Downloads		Movies			Public			VirtualBox VMs		mtimmy.txt
+Desktop			Ebooks			Music			PycharmProjects		copied			test
+Documents		Library			Pictures		RubymineProjects	logs
+bash-3.2$ lsgit submodule update --init --recursive
+fatal: Not a git repository (or any of the parent directories): .git
+bash-3.2$ git submodule update --init --recursive[C[C[C[C[C[C[C[C[C[Cls[Kgit submodule update --init --recursive[C[C[C[C[C[C[C[C[C[C[14Pansible fakehosts -m brew[C[C[C[C[C[C[C[C[C[C[9Pvi .ansible.cfg [C[C[C[C[C[C[C[C[C[Cansible fakehosts -m brew[C[C[C[C[C[C[C[C[C[C[9Pvi .ansible.cfg [Kansible fakehosts -m copy -a "src=/Users/myork dest=/Users/myork/copied"-copied""[10Ptmp/test2"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pmacbook[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Pall[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[0;31mtesthost03.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost04.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost01.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost05.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost02.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost07.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost09.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost10.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost08.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mtesthost06.timmymon | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+[0;31mlocalhost | FAILED! => {
+    "failed": true, 
+    "msg": "error while accessing the file /Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork, error was: [Errno 102] Operation not supported on socket: u'/Users/myork/.ansible/cp/ansible-ssh-127.0.0.1-22-myork'"
+}[0m
+bash-3.2$ ping 19.21[K[K[K2.169[K8.100.3
+PING 192.168.100.3 (192.168.100.3): 56 data bytes
+Request timeout for icmp_seq 0
+Request timeout for icmp_seq 1
+Request timeout for icmp_seq 2
+Request timeout for icmp_seq 3
+^C
+--- 192.168.100.3 ping statistics ---
+5 packets transmitted, 0 packets received, 100.0% packet loss
+bash-3.2$ ip addr
+bash: ip: command not found
+bash-3.2$ ip addr[K[K[K[K[K[K[Kifconfig -a
+lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> mtu 16384
+	options=3<RXCSUM,TXCSUM>
+	inet6 ::1 prefixlen 128 
+	inet 127.0.0.1 netmask 0xff000000 
+	inet6 fe80::1%lo0 prefixlen 64 scopeid 0x1 
+	nd6 options=1<PERFORMNUD>
+gif0: flags=8010<POINTOPOINT,MULTICAST> mtu 1280
+stf0: flags=0<> mtu 1280
+en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	ether 34:36:3b:d2:a1:84 
+	inet6 fe80::3636:3bff:fed2:a184%en0 prefixlen 64 scopeid 0x4 
+	inet 192.168.0.185 netmask 0xffffff00 broadcast 192.168.0.255
+	nd6 options=1<PERFORMNUD>
+	media: autoselect
+	status: active
+en1: flags=963<UP,BROADCAST,SMART,RUNNING,PROMISC,SIMPLEX> mtu 1500
+	options=60<TSO4,TSO6>
+	ether 72:00:08:9f:0f:e0 
+	media: autoselect <full-duplex>
+	status: inactive
+en2: flags=963<UP,BROADCAST,SMART,RUNNING,PROMISC,SIMPLEX> mtu 1500
+	options=60<TSO4,TSO6>
+	ether 72:00:08:9f:0f:e1 
+	media: autoselect <full-duplex>
+	status: inactive
+p2p0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 2304
+	ether 06:36:3b:d2:a1:84 
+	media: autoselect
+	status: inactive
+awdl0: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> mtu 1484
+	ether 4e:f1:ab:3b:93:c0 
+	inet6 fe80::4cf1:abff:fe3b:93c0%awdl0 prefixlen 64 scopeid 0x8 
+	nd6 options=1<PERFORMNUD>
+	media: autoselect
+	status: active
+bridge0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=63<RXCSUM,TXCSUM,TSO4,TSO6>
+	ether 36:36:3b:2d:9e:00 
+	Configuration:
+		id 0:0:0:0:0:0 priority 0 hellotime 0 fwddelay 0
+		maxage 0 holdcnt 0 proto stp maxaddr 100 timeout 1200
+		root id 0:0:0:0:0:0 priority 0 ifcost 0 port 0
+		ipfilter disabled flags 0x2
+	member: en1 flags=3<LEARNING,DISCOVER>
+	        ifmaxaddr 0 port 5 priority 0 path cost 0
+	member: en2 flags=3<LEARNING,DISCOVER>
+	        ifmaxaddr 0 port 6 priority 0 path cost 0
+	nd6 options=1<PERFORMNUD>
+	media: <unknown type>
+	status: inactive
+bash-3.2$ ifconfig -a[4Pp addrping 192.168.100.3
+PING 192.168.100.3 (192.168.100.3): 56 data bytes
+Request timeout for icmp_seq 0
+Request timeout for icmp_seq 1
+Request timeout for icmp_seq 2
+^C
+--- 192.168.100.3 ping statistics ---
+4 packets transmitted, 0 packets received, 100.0% packet loss
+bash-3.2$ ping 192.168.100.3
+PING 192.168.100.3 (192.168.100.3): 56 data bytes
+Request timeout for icmp_seq 0
+Request timeout for icmp_seq 1
+^C
+--- 192.168.100.3 ping statistics ---
+3 packets transmitted, 0 packets received, 100.0% packet loss
+^@bash-3.2$ ping 192.168.100.3[K1
+PING 192.168.100.1 (192.168.100.1): 56 data bytes
+Request timeout for icmp_seq 0
+Request timeout for icmp_seq 1
+Request timeout for icmp_seq 2
+^C
+--- 192.168.100.1 ping statistics ---
+4 packets transmitted, 0 packets received, 100.0% packet loss
+bash-3.2$ ping 192.168.100.1
+PING 192.168.100.1 (192.168.100.1): 56 data bytes
+Request timeout for icmp_seq 0
+Request timeout for icmp_seq 1
+^C
+--- 192.168.100.1 ping statistics ---
+3 packets transmitted, 0 packets received, 100.0% packet loss
+bash-3.2$ ping 192.168.100.1[K3
+PING 192.168.100.3 (192.168.100.3): 56 data bytes
+Request timeout for icmp_seq 0
+Request timeout for icmp_seq 1
+^C
+--- 192.168.100.3 ping statistics ---
+3 packets transmitted, 0 packets received, 100.0% packet loss
+bash-3.2$ [12@(reverse-i-search)`':[C[12Pbash-3.2$[C
+bash-3.2$ ifconfig -a
+lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> mtu 16384
+	options=3<RXCSUM,TXCSUM>
+	inet6 ::1 prefixlen 128 
+	inet 127.0.0.1 netmask 0xff000000 
+	inet6 fe80::1%lo0 prefixlen 64 scopeid 0x1 
+	nd6 options=1<PERFORMNUD>
+gif0: flags=8010<POINTOPOINT,MULTICAST> mtu 1280
+stf0: flags=0<> mtu 1280
+en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	ether 34:36:3b:d2:a1:84 
+	inet6 fe80::3636:3bff:fed2:a184%en0 prefixlen 64 scopeid 0x4 
+	inet 192.168.0.185 netmask 0xffffff00 broadcast 192.168.0.255
+	nd6 options=1<PERFORMNUD>
+	media: autoselect
+	status: active
+en1: flags=963<UP,BROADCAST,SMART,RUNNING,PROMISC,SIMPLEX> mtu 1500
+	options=60<TSO4,TSO6>
+	ether 72:00:08:9f:0f:e0 
+	media: autoselect <full-duplex>
+	status: inactive
+en2: flags=963<UP,BROADCAST,SMART,RUNNING,PROMISC,SIMPLEX> mtu 1500
+	options=60<TSO4,TSO6>
+	ether 72:00:08:9f:0f:e1 
+	media: autoselect <full-duplex>
+	status: inactive
+p2p0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 2304
+	ether 06:36:3b:d2:a1:84 
+	media: autoselect
+	status: inactive
+awdl0: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> mtu 1484
+	ether 4e:f1:ab:3b:93:c0 
+	inet6 fe80::4cf1:abff:fe3b:93c0%awdl0 prefixlen 64 scopeid 0x8 
+	nd6 options=1<PERFORMNUD>
+	media: autoselect
+	status: active
+bridge0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=63<RXCSUM,TXCSUM,TSO4,TSO6>
+	ether 36:36:3b:2d:9e:00 
+	Configuration:
+		id 0:0:0:0:0:0 priority 0 hellotime 0 fwddelay 0
+		maxage 0 holdcnt 0 proto stp maxaddr 100 timeout 1200
+		root id 0:0:0:0:0:0 priority 0 ifcost 0 port 0
+		ipfilter disabled flags 0x2
+	member: en1 flags=3<LEARNING,DISCOVER>
+	        ifmaxaddr 0 port 5 priority 0 path cost 0
+	member: en2 flags=3<LEARNING,DISCOVER>
+	        ifmaxaddr 0 port 6 priority 0 path cost 0
+	nd6 options=1<PERFORMNUD>
+	media: <unknown type>
+	status: inactive
+bash-3.2$ ssh root@192.168.150.128
+The authenticity of host '192.168.150.128 (192.168.150.128)' can't be established.
+ECDSA key fingerprint is SHA256:o/XRB+yUx+qCHeH8ahzmdP+t4w0J2yc46lwbHO80x1M.
+Are you sure you want to continue connecting (yes/no)? ^C
+bash-3.2$ ssh root@192.1[K[K.168.100.3
+^C
+bash-3.2$ ssh root@192.168.100.3
+The authenticity of host '192.168.100.3 (192.168.100.3)' can't be established.
+ECDSA key fingerprint is SHA256:o/XRB+yUx+qCHeH8ahzmdP+t4w0J2yc46lwbHO80x1M.
+Are you sure you want to continue connecting (yes/no)? ^C
+bash-3.2$ ssh-[K[K[K[Kls
+Applications		Downloads		Movies			Public			VirtualBox VMs		mtimmy.txt
+Desktop			Ebooks			Music			PycharmProjects		copied			test
+Documents		Library			Pictures		RubymineProjects	logs
+bash-3.2$ e[Klsssh root@192.168.100.3
+The authenticity of host '192.168.100.3 (192.168.100.3)' can't be established.
+ECDSA key fingerprint is SHA256:o/XRB+yUx+qCHeH8ahzmdP+t4w0J2yc46lwbHO80x1M.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.100.3' (ECDSA) to the list of known hosts.
+root@192.168.100.3's password: 
+Last login: Sat Mar 26 20:38:05 2016
+]0;root@anssibletest:~[?1034h[root@anssibletest ~]# exit
+logout
+Connection to 192.168.100.3 closed.
+bash-3.2$ scp ~/.ssh/id_rsa.pub root@192.168.100[K0.3
+bash-3.2$ ssh 'mkdir[K[K[K[K[K[Kroot@192.168.100.3 'mksir -p [K[K[K[K[K[K[Kdir -p ~/.ssh/'
+root@192.168.100.3's password: 
+bash-3.2$ ssh root@192.168.100.3 'mkdir -p ~/.ssh/'[K[C[C[C[C[C[C[C[C[C[Cls[Kssh root@192.168.100.3[C[C[C[C[C[C[C[C[C[Cls[K[K[Kscp ~/.id[K[Kssh/id_rsa.pub root@192.168.100.3:/~/.ssh[1P~/.ssh[C[C[C[C[C[C/authorized_keys
+root@192.168.100.3's password: 
+id_rsa.pub                                                                                                                                                                  0%    0     0.0KB/s   --:-- ETAid_rsa.pub                                                                                                                                                                100%  411     0.4KB/s   00:00    
+bash-3.2$ exit
+exit
+
+Script done on Sat Mar 26 21:07:17 2016

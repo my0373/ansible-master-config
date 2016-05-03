@@ -1,0 +1,14 @@
+# A local connection to my macbook
+[macbook]
+localhost              ansible_connection=local
+
+# The IPA server virtual machines on my macbook
+[ipa]
+ipa.shadowlab	ansible_user=root ansible_host=192.168.100.2
+
+# The Sat6 server vm on my macbook
+[sat6]
+sat6.shadowlab ansible_user=root ansible_host=192.168.100.5
+
+[ansible]
+ansibletest.shadowlab ansible_user=root ansible_host=192.168.100.200 owner="badgerbadgerbadger"
